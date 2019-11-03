@@ -21,6 +21,4 @@ public class Student {
     public void incrementPoint() {
         point++;
     }
-
-
 }

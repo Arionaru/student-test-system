@@ -1,5 +1,8 @@
 package ru.ariona.testingsystem.dao;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Repository;
 import ru.ariona.testingsystem.domain.Question;
 
 import java.io.BufferedReader;
@@ -9,19 +12,19 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-
+@PropertySource("classpath:application.properties")
+@Repository
 public class QuestionDaoImpl implements QuestionDao {
     private List<Question> questions;
 
-    public QuestionDaoImpl()  {
+    public QuestionDaoImpl(@Value("${question.url}") String file)  {
         questions = new LinkedList<>();
 
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader("src/main/resources/questions.csv"));
+            reader = new BufferedReader(new FileReader(file));
         } catch (FileNotFoundException e) {
-            System.out.println("Файл с вопросами не найден");
-
+            throw new RuntimeException("Файл с вопросами не найден");
         }
         String string;
         try {
@@ -29,7 +32,7 @@ public class QuestionDaoImpl implements QuestionDao {
                 questions.add(new Question(string));
             }
         } catch (IOException e) {
-            System.out.println("Ошибка чтения файла");
+            throw new RuntimeException("Ошибка чтения файла");
         }
     }
 
