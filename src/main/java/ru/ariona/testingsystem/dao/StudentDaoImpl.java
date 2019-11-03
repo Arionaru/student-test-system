@@ -1,6 +1,6 @@
-package ru.ariona.testingSystem.dao;
+package ru.ariona.testingsystem.dao;
 
-import ru.ariona.testingSystem.domain.Student;
+import ru.ariona.testingsystem.domain.Student;
 
 public class StudentDaoImpl implements StudentDao {
 

@@ -1,6 +1,6 @@
-package ru.ariona.testingSystem.dao;
+package ru.ariona.testingsystem.dao;
 
-import ru.ariona.testingSystem.domain.Question;
+import ru.ariona.testingsystem.domain.Question;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public class QuestionDaoImpl implements QuestionDao {
-    List<Question> questions;
+    private List<Question> questions;
 
     public QuestionDaoImpl()  {
         questions = new LinkedList<>();
@@ -36,5 +36,10 @@ public class QuestionDaoImpl implements QuestionDao {
     @Override
     public Question getNext() {
         return ((LinkedList<Question>) questions).poll();
+    }
+
+    @Override
+    public boolean hasNext() {
+        return !questions.isEmpty();
     }
 }

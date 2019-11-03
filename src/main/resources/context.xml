@@ -5,19 +5,19 @@
 
 
 
-    <bean id="studentDao" class="ru.ariona.testingSystem.dao.StudentDaoImpl"/>
+    <bean id="studentDao" class="ru.ariona.testingsystem.dao.StudentDaoImpl"/>
 
-    <bean id="studentService" class="ru.ariona.testingSystem.service.StudentServiceImpl">
+    <bean id="studentService" class="ru.ariona.testingsystem.service.StudentServiceImpl">
         <constructor-arg ref="studentDao"/>
     </bean>
 
-    <bean id="questionDao" class="ru.ariona.testingSystem.dao.QuestionDaoImpl"/>
+    <bean id="questionDao" class="ru.ariona.testingsystem.dao.QuestionDaoImpl"/>
 
-    <bean id="questionService" class="ru.ariona.testingSystem.service.QuesionServiceImpl">
+    <bean id="questionService" class="ru.ariona.testingsystem.service.QuesionServiceImpl">
         <constructor-arg ref="questionDao"/>
     </bean>
 
-    <bean id="testController" class="ru.ariona.testingSystem.controller.TestController">
+    <bean id="testController" class="ru.ariona.testingsystem.controller.TestController">
         <constructor-arg ref="studentService"/>
         <constructor-arg ref="questionService"/>
     </bean>

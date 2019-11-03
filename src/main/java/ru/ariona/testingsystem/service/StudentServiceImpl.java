@@ -1,7 +1,7 @@
-package ru.ariona.testingSystem.service;
+package ru.ariona.testingsystem.service;
 
-import ru.ariona.testingSystem.dao.StudentDao;
-import ru.ariona.testingSystem.domain.Student;
+import ru.ariona.testingsystem.dao.StudentDao;
+import ru.ariona.testingsystem.domain.Student;
 
 public class StudentServiceImpl implements StudentService {
 
@@ -18,6 +18,4 @@ public class StudentServiceImpl implements StudentService {
         }
         return dao.getByName(name);
     }
-
-
 }

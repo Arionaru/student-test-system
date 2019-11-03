@@ -1,7 +1,7 @@
-package ru.ariona.testingSystem;
+package ru.ariona.testingsystem;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.ariona.testingSystem.controller.TestController;
+import ru.ariona.testingsystem.controller.TestController;
 
 public class Main {
     public static void main(String[] args) {

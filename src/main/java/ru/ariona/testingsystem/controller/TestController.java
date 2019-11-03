@@ -1,16 +1,16 @@
-package ru.ariona.testingSystem.controller;
+package ru.ariona.testingsystem.controller;
 
-import ru.ariona.testingSystem.domain.Student;
-import ru.ariona.testingSystem.service.QuestionService;
-import ru.ariona.testingSystem.service.StudentService;
+import ru.ariona.testingsystem.domain.Student;
+import ru.ariona.testingsystem.service.QuestionService;
+import ru.ariona.testingsystem.service.StudentService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class TestController {
-    StudentService studentService;
-    QuestionService questionService;
+    private StudentService studentService;
+    private QuestionService questionService;
 
     public TestController(StudentService studentService, QuestionService questionService) {
         this.studentService = studentService;
@@ -24,24 +24,15 @@ public class TestController {
         try {
             student = studentService.getByName(reader.readLine());
         } catch (IOException e) {
-            System.out.println("Ошибка ввода");
+            throw new RuntimeException("Ошибка ввода");
         }
 
-        while (true) {
-            try {
-                if (questionService.ask()) {
-                    student.incrementPoint();
-                }
-            } catch (Exception e) {
-                break;
+        while (questionService.hasNext()) {
+            if (questionService.ask()) {
+                student.incrementPoint();
             }
-
         }
 
         System.out.println(student.getName() + ", вы набрали " + student.getPoint() + " очков");
-
-
     }
-
-
 }

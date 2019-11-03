@@ -1,4 +1,4 @@
-package ru.ariona.testingSystem.domain;
+package ru.ariona.testingsystem.domain;
 
 public class Student {
 
