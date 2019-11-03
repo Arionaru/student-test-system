@@ -20,7 +20,7 @@ public class TestController {
     public void startTest() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите имя: ");
-        Student student = null;
+        Student student;
         try {
             student = studentService.getByName(reader.readLine());
         } catch (IOException e) {

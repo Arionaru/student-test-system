@@ -13,7 +13,7 @@
 
     <bean id="questionDao" class="ru.ariona.testingsystem.dao.QuestionDaoImpl"/>
 
-    <bean id="questionService" class="ru.ariona.testingsystem.service.QuesionServiceImpl">
+    <bean id="questionService" class="ru.ariona.testingsystem.service.QuestionServiceImpl">
         <constructor-arg ref="questionDao"/>
     </bean>
 

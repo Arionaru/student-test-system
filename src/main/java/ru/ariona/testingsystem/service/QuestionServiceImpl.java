@@ -7,11 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class QuesionServiceImpl implements QuestionService {
+public class QuestionServiceImpl implements QuestionService {
 
     private QuestionDao dao;
 
-    public QuesionServiceImpl(QuestionDao dao) {
+    public QuestionServiceImpl(QuestionDao dao) {
         this.dao = dao;
     }
 
@@ -34,6 +34,4 @@ public class QuesionServiceImpl implements QuestionService {
     public boolean hasNext() {
         return dao.hasNext();
     }
-
-
 }

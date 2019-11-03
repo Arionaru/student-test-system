@@ -1,6 +1,7 @@
 package ru.ariona.testingsystem.domain;
 
 public class Question {
+
     private String que;
     private String ans;
 
